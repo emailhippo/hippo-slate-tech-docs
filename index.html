@@ -2616,31 +2616,18 @@ curl -i -H <span class="s2">"Accept: application/json"</span> <span class="s2">"
 
 <p>` var responses = await EmailHippoClient.ProcessAsync</p>
 
-<p>(</p>
+<p>(       new VerificationRequest 
+             {        VerificationData = new List<VerificationDataRequest> 
+                            {          new VerificationDataRequest { EmailAddress = &quot;abuse@gmail.com&quot;, ServiceType = ServiceType.More, OtherData = &quot;d1&quot; },
+                                       new VerificationDataRequest { EmailAddress = &quot;abuse@aol.com&quot;, ServiceType = ServiceType.More, OtherData = &quot;d2&quot; }
+                            } 
+             },
+             CancellationToken.None
+     ); `</p>
 
-<p>new VerificationRequest </p>
+<p><code>/*Process responses*/</code></p>
 
-<p>{ </p>
-
-<p>VerificationData = new List<VerificationDataRequest> </p>
-
-<p>{</p>
-
-<p>new VerificationDataRequest { EmailAddress = &quot;abuse@gmail.com&quot;, ServiceType = ServiceType.More, OtherData = &quot;d1&quot; },</p>
-
-<p>new VerificationDataRequest { EmailAddress = &quot;abuse@aol.com&quot;, ServiceType = ServiceType.More, OtherData = &quot;d2&quot; }</p>
-
-<p>}</p>
-
-<p>},</p>
-
-<p>CancellationToken.None</p>
-
-<p>); </p>
-
-<p>/<em>Process responses</em>/</p>
-
-<p>/<em>..responses</em>/ `</p>
+<p><code>/*..responses*/</code></p>
 <h2 id='more-edition-2-v3-swagger'>Swagger</h2>
 <p>You can access our Swagger resources as below:</p>
 
