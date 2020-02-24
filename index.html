@@ -287,9 +287,6 @@
                   <li>
                     <a href="#more-edition-2-v3-net-client-libraries" class="toc-h2 toc-link" data-title=".Net client libraries">.Net client libraries</a>
                   </li>
-                  <li>
-                    <a href="#more-edition-2-v3-swagger" class="toc-h2 toc-link" data-title="Swagger">Swagger</a>
-                  </li>
               </ul>
           </li>
           <li>
@@ -2577,62 +2574,87 @@ curl -i -H <span class="s2">"Accept: application/json"</span> <span class="s2">"
 <li>.NET Standard 2.0 or later</li>
 <li>API license key</li>
 </ul>
-<h3 id='more-edition-2-v3-net-client-libraries-how-to-get-the-package'>How to get the package</h3>
+<h3 id='more-edition-2-v3-net-client-libraries-quick-start-guide'>Quick start guide</h3>
+<p>For the following stages please switch to the .Net panel.</p>
+<pre class="highlight vb tab-vb"><code><span class="n">Install</span><span class="o">-</span><span class="n">Package</span> <span class="n">EmailHippo</span><span class="p">.</span><span class="n">EmailVerify</span><span class="p">.</span><span class="n">Api</span><span class="p">.</span><span class="n">V3</span><span class="p">.</span><span class="n">Client</span>
+
+<span class="n">Install</span><span class="o">-</span><span class="n">Package</span> <span class="n">System</span><span class="p">.</span><span class="n">Runtime</span><span class="p">.</span><span class="n">Serialization</span><span class="p">.</span><span class="n">Primitives</span>
+</code></pre><h3 id='more-edition-2-v3-net-client-libraries-how-to-get-the-package'>How to get the package</h3>
 <p>The package is available from <a href="https://www.nuget.org/">Nuget</a>.</p>
+<h3 id='more-edition-2-v3-net-client-libraries-how-to-use-the-package'>How to use the package</h3><pre class="highlight vb tab-vb"><code><span class="o">/*</span> <span class="n">Licence</span> <span class="n">and</span> <span class="n">initialise</span> <span class="o">*/</span>
+<span class="o">/*</span>  <span class="n">Visit</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">emailhippo</span><span class="p">.</span><span class="n">com</span> <span class="n">to</span> <span class="n">get</span> <span class="n">a</span> <span class="n">license</span> <span class="n">key</span> <span class="o">*/</span>
 
-<p>`Install-Package EmailHippo.EmailVerify.Api.V3.Client</p>
-
-<p>Install-Package System.Runtime.Serialization.Primitives`</p>
-<h3 id='more-edition-2-v3-net-client-libraries-how-to-use-the-package'>How to use the package</h3>
+<span class="n">ApiClientFactoryV3_5</span><span class="p">.</span><span class="n">Initialize</span><span class="p">(</span><span class="s">"{your license key}"</span><span class="p">,</span> <span class="p">{</span><span class="n">Custom</span> <span class="n">logger</span> <span class="n">factory</span><span class="p">}</span> <span class="err">[</span><span class="n">optional</span><span class="err">]</span><span class="p">)</span><span class="err">;</span>
+</code></pre>
 <p><strong>Step 1 - license and initialize</strong></p>
 
 <p>This software must be initialized before use. Initializaton is only needed once per app domain. The best place to do this in in the hosting process bootstrap code. For example, a web app use global.asax, a console app use Main() method.</p>
 
 <p>Supply license configuration to the software by providing the license key in code as part of initialization</p>
 
-<p>Invoke static method ApiClientFactoryV3_5.Initialize(string licenseKey = null)... as follows if supplying the license in code:</p>
-
-<p><code>/*Visit https://www.emailhippo.com to get a license key*/</code></p>
-
-<p><code>ApiClientFactoryV3_5.Initialize(&quot;{your license key}&quot;, {Custom logger factory} [optional]);</code></p>
+<p>Invoke static method ApiClientFactoryV3_5.Initialize(string licenseKey = null)... if supplying the license in code.</p>
 
 <p>The logger factory is of type <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging">Microsoft.Extensions.Logging</a> and allows integration with Serilog, console, NLog and many more logging providers.</p>
+<pre class="highlight vb tab-vb"><code><span class="o">/*</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">client</span> <span class="o">*/</span>
 
-<p><strong>Step 2 - create</strong></p>
+<span class="n">var</span> <span class="n">EmailHippoClient</span> <span class="o">=</span> <span class="n">ApiClientFactoryV3_5</span><span class="p">.</span><span class="n">Create</span><span class="p">()</span><span class="err">;</span>
+</code></pre>
+<p><strong>Step 2 - create the client</strong></p>
 
-<p>The main client object is created using a static factory as follows:</p>
+<p>The main client object is created using a static factory.</p>
+<pre class="highlight vb tab-vb"><code><span class="o">/*</span> <span class="n">Asynchronously</span> <span class="n">check</span> <span class="n">email</span> <span class="n">addresses</span> <span class="o">*/</span>
 
-<p>Creating the client</p>
+<span class="n">var</span> <span class="n">responses</span> <span class="o">=</span> <span class="n">await</span> <span class="n">EmailHippoClient</span><span class="p">.</span><span class="n">ProcessAsync</span>
+    <span class="p">(</span>
+       <span class="n">new</span> <span class="n">VerificationRequest</span> 
+        <span class="p">{</span> 
+            <span class="n">VerificationData</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">VerificationDataRequest</span><span class="o">&gt;</span> 
+            <span class="p">{</span>
+                <span class="n">new</span> <span class="n">VerificationDataRequest</span> <span class="p">{</span> <span class="n">EmailAddress</span> <span class="o">=</span> <span class="s">"abuse@gmail.com"</span><span class="p">,</span> <span class="n">ServiceType</span> <span class="o">=</span> <span class="n">ServiceType</span><span class="p">.</span><span class="n">More</span><span class="p">,</span> <span class="n">OtherData</span> <span class="o">=</span> <span class="s">"d1"</span> <span class="p">},</span>
+                <span class="n">new</span> <span class="n">VerificationDataRequest</span> <span class="p">{</span> <span class="n">EmailAddress</span> <span class="o">=</span> <span class="s">"abuse@aol.com"</span><span class="p">,</span> <span class="n">ServiceType</span> <span class="o">=</span> <span class="n">ServiceType</span><span class="p">.</span><span class="n">More</span><span class="p">,</span> <span class="n">OtherData</span> <span class="o">=</span> <span class="s">"d2"</span> <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="n">CancellationToken</span><span class="p">.</span><span class="n">None</span>
+    <span class="p">)</span><span class="err">;</span>
 
-<p><code>var EmailHippoClient = ApiClientFactoryV3_5.Create();</code></p>
-
+<span class="o">/*</span><span class="n">Process</span> <span class="n">responses</span><span class="o">*/</span>
+<span class="o">/*</span><span class="p">.</span><span class="err">.</span><span class="n">responses</span><span class="o">*/</span>
+</code></pre>
 <p><strong>Step 3 - use</strong></p>
 
 <p>Once you have a reference to the client object, go ahead and use it.</p>
 
-<p>This code checks more than one email address asynchronously</p>
+<p>This code checks more than one email address asynchronously.</p>
 
-<p>` var responses = await EmailHippoClient.ProcessAsync</p>
+<p><strong>Step 4 - additional functions</strong>
+<code>vb
+EmailHippoClient.ProgressChanged += (o, args) =&gt; Console.WriteLine(JsonConvert.SerializeObject(args));
+</code>
+<strong>Progress reporting</strong>
+Progress can be captured using the built in event delegate &quot;ProgressChanged&quot;.</p>
+<pre class="highlight vb tab-vb"><code><span class="n">public</span> <span class="n">class</span> <span class="n">Startup</span>
+<span class="p">{</span>
+<span class="n">private</span> <span class="n">static</span> <span class="n">readonly</span> <span class="n">ILoggerFactory</span> <span class="n">MyLoggerFactory</span> <span class="o">=</span> <span class="n">new</span> <span class="n">LoggerFactory</span><span class="p">()</span><span class="err">;</span>
 
-<p>(       new VerificationRequest 
-             {        VerificationData = new List<VerificationDataRequest> 
-                            {          new VerificationDataRequest { EmailAddress = &quot;abuse@gmail.com&quot;, ServiceType = ServiceType.More, OtherData = &quot;d1&quot; },
-                                       new VerificationDataRequest { EmailAddress = &quot;abuse@aol.com&quot;, ServiceType = ServiceType.More, OtherData = &quot;d2&quot; }
-                            } 
-             },
-             CancellationToken.None
-     ); `</p>
+<span class="o">///</span> <span class="o">&lt;</span><span class="n">summary</span><span class="o">&gt;</span>
+<span class="o">///</span> <span class="n">Setup</span> <span class="n">and</span> <span class="n">add</span> <span class="n">serilog</span> <span class="n">listeners</span> <span class="n">to</span> <span class="n">Microsoft</span> <span class="n">logging</span> <span class="n">extensions</span><span class="p">.</span>
+<span class="err">///</span> <span class="err">&lt;/</span><span class="n">summary</span><span class="o">&gt;</span>
+<span class="n">public</span> <span class="n">Startup</span><span class="p">(){</span>
+    <span class="n">Log</span><span class="p">.</span><span class="n">Logger</span> <span class="o">=</span> <span class="n">new</span> <span class="n">LoggerConfiguration</span><span class="p">()</span>
+                    <span class="p">.</span><span class="n">Enrich</span>
+                    <span class="p">.</span><span class="n">FromLogContext</span><span class="p">()</span>
+                    <span class="p">.</span><span class="n">WriteTo</span><span class="p">.</span><span class="n">LiterateConsole</span><span class="p">()</span>
+                    <span class="p">.</span><span class="n">CreateLogger</span><span class="p">()</span><span class="err">;</span>
 
-<p><code>/*Process responses*/</code></p>
+            <span class="n">MyLoggerFactory</span>
+                <span class="p">.</span><span class="n">AddSerilog</span><span class="p">()</span><span class="err">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p><strong>Logging</strong>
+Logging is provided using Microsoft.Extensions.Logging.</p>
 
-<p><code>/*..responses*/</code></p>
-<h2 id='more-edition-2-v3-swagger'>Swagger</h2>
-<p>You can access our Swagger resources as below:</p>
-
-<ul>
-<li><p><a href="https://api.hippoapi.com/swagger/index.html">Swagger docs and try it now</a></p></li>
-<li><p><a href="https://api.hippoapi.com/swagger/v3/swagger.json">Swagger schema</a></p></li>
-</ul>
+<p>Enable logging using standard Microsoft.Extensions.Logging listeners. </p>
 <h1 id='whois-api'>WHOIS API <div style="text-align: right"><img src="images/EH_WHOIS.png" width="100" /></div></h1>
 <p>Email Hippo WHOIS API services facilitate easy, fast and scalable access to the global WHOIS databases in both structured and unstructured formats with domain age information.</p>
 
