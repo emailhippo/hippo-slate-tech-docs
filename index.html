@@ -2834,7 +2834,139 @@ curl -X GET //api.whoishippo.com/v1/<span class="o">{</span>k<span class="o">}</
     </span><span class="n">resp</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span><span class="x">
     </span><span class="c">// ...</span><span class="x">
 </span><span class="p">}</span><span class="x">
-</span></code></pre>
+</span></code></pre><pre class="highlight php tab-php"><code>
+<span class="cp">&lt;?php</span>
+
+<span class="c1">// URL which should be requested
+</span><span class="nv">$url</span> <span class="o">=</span> <span class="s1">'https://api.whoishippo.com/v1'</span><span class="p">;</span>
+
+<span class="nv">$apikey</span> <span class="o">=</span> <span class="s1">'YOUR API KEY'</span><span class="p">;</span> <span class="c1">// API Key
+</span>
+<span class="nv">$domain</span> <span class="o">=</span> <span class="s1">'Domain to query'</span><span class="p">;</span> <span class="c1">// Domain to query
+</span>
+<span class="c1">// jSON String for request
+</span><span class="nv">$url</span> <span class="o">.=</span> <span class="s2">"/</span><span class="nv">$apikey</span><span class="s2">/</span><span class="nv">$domain</span><span class="s2">"</span><span class="p">;</span>
+
+<span class="c1">// Initializing curl
+</span><span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span> <span class="nv">$url</span> <span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$ch</span> <span class="o">==</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">die</span> <span class="p">(</span><span class="s2">"Curl failed!"</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+
+  <span class="c1">// Configuring curl options
+</span>  <span class="nv">$options</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">'Content-type: application/json'</span><span class="p">)</span>
+  <span class="p">);</span>
+
+  <span class="c1">// Setting curl options
+</span>  <span class="nb">curl_setopt_array</span><span class="p">(</span> <span class="nv">$ch</span><span class="p">,</span> <span class="nv">$options</span> <span class="p">);</span>
+
+  <span class="c1">// Getting results
+</span>  <span class="nv">$result</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span> <span class="c1">// Getting jSON result string
+</span>
+  <span class="c1">// display JSON data
+</span>  <span class="k">echo</span> <span class="s2">"</span><span class="nv">$result</span><span class="s2">"</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="cp">?&gt;</span>
+</code></pre><pre class="highlight c tab-c"><code><span class="cp">#region Usings
+</span>
+<span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">IO</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">;</span>
+
+<span class="cp">#endregion
+</span>
+<span class="c1">/// &lt;summary&gt;
+/// The program.
+/// &lt;/summary&gt;
+</span><span class="n">internal</span> <span class="n">class</span> <span class="n">Program</span>
+<span class="p">{</span>
+    <span class="cp">#region Constants
+</span>
+    <span class="c1">/// &lt;summary&gt;
+</span>    <span class="c1">/// The api url.
+</span>    <span class="c1">/// &lt;/summary&gt;
+</span>    <span class="n">private</span> <span class="k">const</span> <span class="n">string</span> <span class="n">ApiUrl</span> <span class="o">=</span> <span class="err">@</span><span class="s">"https://api.whoishippo.com/v1"</span><span class="p">;</span>
+    <span class="c1">/// &lt;summary&gt;
+</span>    <span class="c1">/// 0 = ApiUrl
+</span>    <span class="c1">/// 1 = API Key
+</span>    <span class="c1">/// 2 = Domain to query
+</span>    <span class="c1">/// &lt;/summary&gt;
+</span>    <span class="n">private</span> <span class="k">const</span> <span class="n">string</span> <span class="n">QueryFormatString</span> <span class="o">=</span> <span class="err">@</span><span class="s">"{0}/{1}/{2}"</span><span class="p">;</span>
+
+    <span class="c1">/// &lt;summary&gt;
+</span>    <span class="c1">/// The your api key.
+</span>    <span class="c1">/// &lt;/summary&gt;
+</span>    <span class="c1">/// &lt;remarks&gt;
+</span>    <span class="c1">/// /*ENTER YOUR API KEY HERE*/
+</span>    <span class="c1">/// &lt;/remarks&gt;
+</span>    <span class="n">private</span> <span class="k">const</span> <span class="n">string</span> <span class="n">YourAPIKey</span> <span class="o">=</span> <span class="err">@</span><span class="s">"&lt;!-- ENTER A VALID KEY HERE--&gt;"</span><span class="p">;</span>
+
+    <span class="cp">#endregion
+</span>
+    <span class="cp">#region Methods
+</span>
+    <span class="c1">/// &lt;summary&gt;
+</span>    <span class="c1">/// The main program entry point.
+</span>    <span class="c1">/// &lt;/summary&gt;
+</span>    <span class="c1">/// &lt;param name="args"&gt;
+</span>    <span class="c1">/// The args.
+</span>    <span class="c1">/// &lt;/param&gt;
+</span>    <span class="n">private</span> <span class="k">static</span> <span class="kt">void</span> <span class="nf">Main</span><span class="p">(</span><span class="n">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Input domain to query"</span><span class="p">);</span>
+
+        <span class="n">var</span> <span class="n">readLine</span> <span class="o">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+
+        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+
+        <span class="n">var</span> <span class="n">requestUrl</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="n">QueryFormatString</span><span class="p">,</span> <span class="n">ApiUrl</span><span class="p">,</span> <span class="n">YourAPIKey</span><span class="p">,</span> <span class="n">readLine</span><span class="p">);</span>
+
+        <span class="n">var</span> <span class="n">myRequest</span> <span class="o">=</span> <span class="p">(</span><span class="n">HttpWebRequest</span><span class="p">)</span><span class="n">WebRequest</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">requestUrl</span><span class="p">);</span>
+
+        <span class="n">WebResponse</span> <span class="n">webResponse</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+
+        <span class="n">try</span>
+        <span class="p">{</span>
+            <span class="n">webResponse</span> <span class="o">=</span> <span class="n">myRequest</span><span class="p">.</span><span class="n">GetResponse</span><span class="p">();</span>
+
+            <span class="n">using</span> <span class="p">(</span><span class="n">var</span> <span class="n">reader</span> <span class="o">=</span> <span class="n">new</span> <span class="n">StreamReader</span><span class="p">(</span><span class="n">webResponse</span><span class="p">.</span><span class="n">GetResponseStream</span><span class="p">()))</span>
+            <span class="p">{</span>
+                <span class="n">var</span> <span class="n">jsonString</span> <span class="o">=</span> <span class="n">reader</span><span class="p">.</span><span class="n">ReadToEnd</span><span class="p">();</span>
+
+                <span class="n">Console</span><span class="p">.</span><span class="n">ForegroundColor</span> <span class="o">=</span> <span class="n">ConsoleColor</span><span class="p">.</span><span class="n">Green</span><span class="p">;</span>
+                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Result:"</span><span class="p">);</span>
+                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">jsonString</span><span class="p">);</span>
+                <span class="n">Console</span><span class="p">.</span><span class="n">ResetColor</span><span class="p">();</span>
+                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Press &lt;Enter&gt; to continue.."</span><span class="p">);</span>
+                <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">exception</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"An error occured:"</span><span class="p">);</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">ForegroundColor</span> <span class="o">=</span> <span class="n">ConsoleColor</span><span class="p">.</span><span class="n">Red</span><span class="p">;</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Exception reported: {0}"</span><span class="p">,</span> <span class="n">exception</span><span class="p">.</span><span class="n">Message</span><span class="p">);</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">ResetColor</span><span class="p">();</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Press &lt;Enter&gt; to continue.."</span><span class="p">);</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="n">finally</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">webResponse</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">webResponse</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="cp">#endregion
+</span><span class="p">}</span>
+</code></pre>
 <p>Query WHOIS records by domain and license key.</p>
 
 <p><code>GET //api.whoishippo.com//v1/{k}/{d}</code></p>
