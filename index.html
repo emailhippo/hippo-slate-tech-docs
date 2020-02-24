@@ -2576,7 +2576,9 @@ curl -i -H <span class="s2">"Accept: application/json"</span> <span class="s2">"
 </ul>
 <h3 id='more-edition-2-v3-net-client-libraries-quick-start-guide'>Quick start guide</h3>
 <p>For the following stages please switch to the .Net panel.</p>
-<pre class="highlight vb tab-vb"><code><span class="n">Install</span><span class="o">-</span><span class="n">Package</span> <span class="n">EmailHippo</span><span class="p">.</span><span class="n">EmailVerify</span><span class="p">.</span><span class="n">Api</span><span class="p">.</span><span class="n">V3</span><span class="p">.</span><span class="n">Client</span>
+<pre class="highlight vb tab-vb"><code><span class="o">/*</span> <span class="n">Install</span> <span class="o">*/</span>
+
+<span class="n">Install</span><span class="o">-</span><span class="n">Package</span> <span class="n">EmailHippo</span><span class="p">.</span><span class="n">EmailVerify</span><span class="p">.</span><span class="n">Api</span><span class="p">.</span><span class="n">V3</span><span class="p">.</span><span class="n">Client</span>
 
 <span class="n">Install</span><span class="o">-</span><span class="n">Package</span> <span class="n">System</span><span class="p">.</span><span class="n">Runtime</span><span class="p">.</span><span class="n">Serialization</span><span class="p">.</span><span class="n">Primitives</span>
 </code></pre><h3 id='more-edition-2-v3-net-client-libraries-how-to-get-the-package'>How to get the package</h3>
@@ -2626,13 +2628,17 @@ curl -i -H <span class="s2">"Accept: application/json"</span> <span class="s2">"
 
 <p>This code checks more than one email address asynchronously.</p>
 
-<p><strong>Step 4 - additional functions</strong>
-<code>vb
-EmailHippoClient.ProgressChanged += (o, args) =&gt; Console.WriteLine(JsonConvert.SerializeObject(args));
-</code>
-<strong>Progress reporting</strong>
+<p><strong>Step 4 - additional functions</strong></p>
+<pre class="highlight vb tab-vb"><code><span class="o">/*</span> <span class="n">Progress</span> <span class="n">reporting</span> <span class="o">*/</span>
+
+<span class="n">EmailHippoClient</span><span class="p">.</span><span class="n">ProgressChanged</span> <span class="o">+=</span> <span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">JsonConvert</span><span class="p">.</span><span class="n">SerializeObject</span><span class="p">(</span><span class="n">args</span><span class="p">))</span><span class="err">;</span>
+
+</code></pre>
+<p><strong>Progress reporting</strong>
 Progress can be captured using the built in event delegate &quot;ProgressChanged&quot;.</p>
-<pre class="highlight vb tab-vb"><code><span class="n">public</span> <span class="n">class</span> <span class="n">Startup</span>
+<pre class="highlight vb tab-vb"><code><span class="o">/*</span> <span class="n">Logging</span><span class="o">*/</span>
+
+<span class="n">public</span> <span class="n">class</span> <span class="n">Startup</span>
 <span class="p">{</span>
 <span class="n">private</span> <span class="n">static</span> <span class="n">readonly</span> <span class="n">ILoggerFactory</span> <span class="n">MyLoggerFactory</span> <span class="o">=</span> <span class="n">new</span> <span class="n">LoggerFactory</span><span class="p">()</span><span class="err">;</span>
 
