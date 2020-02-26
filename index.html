@@ -1183,6 +1183,7 @@ Select the JSON tab to view the schema in JSON.
 <td>The reason for the verification result is unknown.</td>
 </tr>
 </tbody></table>
+<p><a name="morev3"></a></p>
 <h1 id='more-edition-2-v3'>MORE Edition 2 - V3</h1><h2 id='more-edition-2-v3-specification'>Specification</h2>
 <table><thead>
 <tr>
@@ -2762,7 +2763,7 @@ Select the JSON tab to view the schema in JSON.
 <tr>
 <td>Bad</td>
 <td>DomainIsInexistent</td>
-<td>The domain (i.e. the bit after the ‘@’ character) defined in the email address does not exist, according to <a href="#dns">DNS</a> records. A domain that does not exist cannot have email boxes.</td>
+<td>The domain (i.e. the bit after the ‘@’ character) defined in the email address does not exist, according to <a href="#glossary-dns">DNS</a> records. A domain that does not exist cannot have email boxes.</td>
 </tr>
 <tr>
 <td>Bad</td>
@@ -2782,17 +2783,17 @@ Select the JSON tab to view the schema in JSON.
 <tr>
 <td>Bad</td>
 <td>NoMxServersFound</td>
-<td>There are no mail servers defined for this domain, according to <a href="#dns">DNS</a>. Email addresses cannot be valid if there are no email servers defined in DNS for the domain.</td>
+<td>There are no mail servers defined for this domain, according to <a href="#glossary-dns">DNS</a>. Email addresses cannot be valid if there are no email servers defined in DNS for the domain.</td>
 </tr>
 <tr>
 <td>Bad</td>
 <td>ServerDoesNotSupportInternationalMailboxes</td>
-<td>The server does not support international mailboxes. International email boxes are those that use international character sets such as Chinese / Kanji etc. International email boxes require systems in place for <a href="#punycode">Punycode</a> translation. Where these systems are not in place, email verification or delivery is not possible.</td>
+<td>The server does not support international mailboxes. International email boxes are those that use international character sets such as Chinese / Kanji etc. International email boxes require systems in place for <a href="#glossary-punycode">Punycode</a> translation. Where these systems are not in place, email verification or delivery is not possible.</td>
 </tr>
 <tr>
 <td>Bad</td>
 <td>PossibleSpamTrapDetected</td>
-<td>A possible spam trap email address or domain has been detected. Spam traps are email addresses or domains deliberately placed on-line in order to capture and flag potential spam based operations. Our advanced detection heuristics are capable of detecting likely spam trap addresses or domains known to be associated with spam trap techniques. We do not recommend sending emails to addresses identified as associated with known spam trap behaviour. Sending emails to known spam traps or domains will result in your <a href="#esp">ESP</a> being subjected to email blocks from a <a href="#dnsbl">DNS Block List</a>. An ESP cannot tolerate entries in a Block List (as it adversely affects email deliverability for all customers) and will actively refuse to send emails on behalf of customers with a history of generating entries in a Block List.</td>
+<td>A possible spam trap email address or domain has been detected. Spam traps are email addresses or domains deliberately placed on-line in order to capture and flag potential spam based operations. Our advanced detection heuristics are capable of detecting likely spam trap addresses or domains known to be associated with spam trap techniques. We do not recommend sending emails to addresses identified as associated with known spam trap behaviour. Sending emails to known spam traps or domains will result in your <a href="#esp">ESP</a> being subjected to email blocks from a <a href="#glossary-dnsbl">DNS Block List</a>. An ESP cannot tolerate entries in a Block List (as it adversely affects email deliverability for all customers) and will actively refuse to send emails on behalf of customers with a history of generating entries in a Block List.</td>
 </tr>
 <tr>
 <td>RetryLater</td>
@@ -2807,12 +2808,12 @@ Select the JSON tab to view the schema in JSON.
 <tr>
 <td>Unverifiable</td>
 <td>DomainIsWellKnownDea</td>
-<td>The domain is a well known Disposable Email Address <a href="#dea">DEA</a>. There are many services available that permit users to use a one-time only email address. Typically, these email addresses are used by individuals wishing to gain access to content or services requiring registration of email addresses but same individuals not wishing to divulge their true identities (e.g. permanent email addresses). DEA addresses should not be regarded as valid for email send purposes as it is unlikely that messages sent to DEA addresses will ever be read.</td>
+<td>The domain is a well known Disposable Email Address <a href="#glossary-dea">DEA</a>. There are many services available that permit users to use a one-time only email address. Typically, these email addresses are used by individuals wishing to gain access to content or services requiring registration of email addresses but same individuals not wishing to divulge their true identities (e.g. permanent email addresses). DEA addresses should not be regarded as valid for email send purposes as it is unlikely that messages sent to DEA addresses will ever be read.</td>
 </tr>
 <tr>
 <td>Unverifiable</td>
 <td>GreyListing</td>
-<td><a href="#greylisting">Greylisting</a> is in operation. It is not possible to validate email boxes in real-time where greylisting is in operation.</td>
+<td><a href="#glossary-greylisting">Greylisting</a> is in operation. It is not possible to validate email boxes in real-time where greylisting is in operation.</td>
 </tr>
 <tr>
 <td>Unverifiable</td>
@@ -2837,7 +2838,7 @@ Select the JSON tab to view the schema in JSON.
 
 <p>For email verification and data enrichment performed to the MORE level, Email Hippo supplies a Trust Score.</p>
 
-<p>The Trust Score to provides an ‘at a glance’ determination of quality; drilling deeper than just the email address itself.</p>
+<p>The Trust Score provides an ‘at a glance’ determination of quality; drilling deeper than just the email address itself.</p>
 
 <p>The Email Hippo Trust Score is designed to answer a fundamental question posed from the perspective of a business owner, merchant, data broker or lead generation service:</p>
 
@@ -3042,7 +3043,7 @@ Select the JSON tab to view the schema in JSON.
 </tr>
 </tbody></table>
 <h2 id='more-edition-2-v3-net-client-libraries'>.Net client libraries</h2>
-<p>We have a .NET package built for easy integration with our MORE Edition 2 (v3) API services. For further information on the RESTful server side implementation, please see the <a href="#MORE%20Edition%202%20-%20V3">docs</a> and <a href="#morev3resultrecord-schema">schema</a>.</p>
+<p>We have a .NET package built for easy integration with our MORE Edition 2 (v3) API services. For further information on the RESTful server side implementation, please see the <a href="#morev3">docs</a> and <a href="#morev3resultrecord-schema">schema</a>.</p>
 
 <p>If you&#39;re working in the .NET environment, this package can save you hours of work writing your own JSON parsers, message pumping logic, threading and logging code.</p>
 <h3 id='more-edition-2-v3-net-client-libraries-prerequisites'>Prerequisites</h3>
@@ -3061,7 +3062,7 @@ For the following stages please switch to the .Net panel.
 
 <span class="n">Install</span><span class="o">-</span><span class="n">Package</span> <span class="n">System</span><span class="p">.</span><span class="n">Runtime</span><span class="p">.</span><span class="n">Serialization</span><span class="p">.</span><span class="n">Primitives</span>
 </code></pre><h3 id='more-edition-2-v3-net-client-libraries-how-to-get-the-package'>How to get the package</h3>
-<p>The package is available from <a href="https://www.nuget.org/">Nuget</a>.</p>
+<p>The package is available from  <a rel="nofollow" target="wikipedia" href="https://www.nuget.org/">Nuget</a>.</p>
 <h3 id='more-edition-2-v3-net-client-libraries-how-to-use-the-package'>How to use the package</h3><pre class="highlight vb tab-vb"><code><span class="o">/*</span> <span class="n">Licence</span> <span class="n">and</span> <span class="n">initialise</span> <span class="o">*/</span>
 <span class="o">/*</span>  <span class="n">Visit</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">emailhippo</span><span class="p">.</span><span class="n">com</span> <span class="n">to</span> <span class="n">get</span> <span class="n">a</span> <span class="n">license</span> <span class="n">key</span> <span class="o">*/</span>
 
@@ -3075,7 +3076,7 @@ For the following stages please switch to the .Net panel.
 
 <p>Invoke static method ApiClientFactoryV3_5.Initialize(string licenseKey = null)... if supplying the license in code.</p>
 
-<p>The logger factory is of type <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging">Microsoft.Extensions.Logging</a> and allows integration with Serilog, console, NLog and many more logging providers.</p>
+<p>The logger factory is of type <a rel="nofollow" target="wikipedia" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging">Microsoft.Extensions.Logging</a> and allows integration with Serilog, console, NLog and many more logging providers.</p>
 <pre class="highlight vb tab-vb"><code><span class="o">/*</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">client</span> <span class="o">*/</span>
 
 <span class="n">var</span> <span class="n">EmailHippoClient</span> <span class="o">=</span> <span class="n">ApiClientFactoryV3_5</span><span class="p">.</span><span class="n">Create</span><span class="p">()</span><span class="err">;</span>
