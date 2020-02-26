@@ -4423,7 +4423,7 @@ function (user, context, callback) {
 <h2 id='frequently-asked-questions-how-does-the-more-api-work'>How does the MORE API work?</h2>
 <p>At a basic conceptual level, the process of verifying email addresses is very simple. Google for “Send email using telnet” for a quick and general overview of how it’s done. To verify an email address without sending an email, simply go as far as the “RCPT TO” stage and parse the response code. That’s the easy bit and can be accomplished in just a couple of dozen lines of a PHP script.</p>
 
-<p>The hard bit is dealing with mail services that are intrinsically configured to work against the process of email verification or any similar <a href="#smtp">SMTP</a> based activity. The reason that any email / SMTP process is difficult from a client perspective is that mail services need to protect themselves from an ever increasing landscape of abuse including spam and <a href="#ddos">DDoS</a> attacks.</p>
+<p>The hard bit is dealing with mail services that are intrinsically configured to work against the process of email verification or any similar <a href="#glossary-smtp">SMTP</a> based activity. The reason that any email / SMTP process is difficult from a client perspective is that mail services need to protect themselves from an ever increasing landscape of abuse including spam and <a href="#glossary-ddos">DDoS</a> attacks.</p>
 
 <p>Email Hippo‘s strength in dealing with the “hard bit” of email verification comes from years of experience in doing email verification together with our complete ownership of our SMTP verification software stack together with an extensive cloud based infrastructure. That’s why Email Hippo can do the “hard bits” best and offer outstanding coverage on the more technically challenging, dynamic domains.</p>
 <h2 id='frequently-asked-questions-how-does-the-whois-api-work'>How does the WHOIS API work?</h2>
@@ -4465,7 +4465,7 @@ function (user, context, callback) {
 
 <p>Verifying email addresses in consumer domains is generally more technically challenging than B2B</p>
 <h2 id='glossary-block-list'>Block list</h2>
-<p>See <a href="#dnsbl">DNSBL</a>.</p>
+<p>See <a href="#glossary-dnsbl">DNSBL</a>.</p>
 <h2 id='glossary-bson'>BSON</h2>
 <p>Binary Object Notation</p>
 
@@ -4473,9 +4473,9 @@ function (user, context, callback) {
 <h2 id='glossary-cors'>CORS</h2>
 <p>Cross Origin Resource Scripting</p>
 
-<p>Allows modern browsers to work with script (e.g. JavaScript) and <a href="#json">JSON</a> data originating form other domains.</p>
+<p>Allows modern browsers to work with script (e.g. JavaScript) and <a href="#glossary-json">JSON</a> data originating form other domains.</p>
 
-<p>CORS is required to allow client script such a JavaScript, jQuery or AngularJS to work with results returned from an external <a href="#restful">RESTful</a> <a href="#API">API</a>.</p>
+<p>CORS is required to allow client script such a JavaScript, jQuery or AngularJS to work with results returned from an external <a href="#glossary-restful">RESTful</a> <a href="#glossary-API">API</a>.</p>
 
 <p>See <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Wikipedia - CORS</a> for more information.</p>
 <h2 id='glossary-ddos'>DDoS</h2>
@@ -4493,7 +4493,7 @@ function (user, context, callback) {
 
 <p>At its simplest level, DNS converts text based queries (e.g. a domain name) into IP addresses.</p>
 
-<p>DNS is also responsible for providing the <a href="#mx">MX</a> records needed to locate a domains mail servers.</p>
+<p>DNS is also responsible for providing the <a href="#glossary-mx">MX</a> records needed to locate a domains mail servers.</p>
 
 <p>See <a rel="nofollow" target="wikipedia" href="https://en.wikipedia.org/wiki/Domain_Name_System">Wikipedia - Domain Name System</a> for further information.</p>
 <h2 id='glossary-dnsbl'>DNSBL</h2>
@@ -4509,7 +4509,7 @@ function (user, context, callback) {
 
 <p>See <a rel="nofollow" target="wikipedia" href="https://en.wikipedia.org/wiki/Email_service_provider_(marketing)">Wikipedia - Email service provider (marketing)</a> for more information.</p>
 <h2 id='glossary-free-mail'>Free mail</h2>
-<p>Addresses served by popular <a href="#b2c">B2C</a> service providers such as Outlook, Yahoo, Live, AOL, Gmail and so on.</p>
+<p>Addresses served by popular <a href="#glossary-b2c">B2C</a> service providers such as Outlook, Yahoo, Live, AOL, Gmail and so on.</p>
 <h2 id='glossary-greylisting'>Greylisting</h2>
 <p>A technique used in mail servers as an anti-spam technique. Sometimes also known as “deferred”, greylisting arbitrarily delays the delivery of emails with a “try again later” response to the client sending the email.</p>
 
@@ -4533,7 +4533,7 @@ function (user, context, callback) {
 
 <p>See <a rel="nofollow" target="wikipedia" href="https://en.wikipedia.org/wiki/JSON">Wikipedia - JSON</a> for more information.</p>
 <h2 id='glossary-license-key'>License key</h2>
-<p>License key authentication is best for situations where simplicity is required and you can keep the key private. An ideal use case for key authentication would be for server based applications calling the  <a href="#restful">RESTful</a> <a href="#API">API</a>.</p>
+<p>License key authentication is best for situations where simplicity is required and you can keep the key private. An ideal use case for key authentication would be for server based applications calling the  <a href="#glossary-restful">RESTful</a> <a href="#glossary-API">API</a>.</p>
 
 <p>Click <a href="https://register.emailhippo.com/signup">here</a> to sign up and access a license key.</p>
 <h2 id='glossary-ms'>ms</h2>
@@ -4587,7 +4587,7 @@ function (user, context, callback) {
 <h2 id='glossary-spam-trap'>Spam trap</h2>
 <p>Spam traps are email addresses used for the sole purpose of detecting spamming activities.</p>
 
-<p>Spam traps are used by many block lists (<a href="#dnsbl">DNSBL</a>) to detect spammers.</p>
+<p>Spam traps are used by many block lists (<a href="#glossary-dnsbl">DNSBL</a>) to detect spammers.</p>
 
 <p>See <a rel="nofollow" target="wikipedia" href="https://en.wikipedia.org/wiki/Spamtrap">Wikipedia - Spam traps</a> for more information.</p>
 <h2 id='glossary-txt'>TXT</h2>
