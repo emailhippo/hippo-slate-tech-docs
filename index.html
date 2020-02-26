@@ -1033,7 +1033,7 @@ Select the JSON tab to view the schema in JSON.
 <td>boolean</td>
 <td>false</td>
 <td>none</td>
-<td>Is a disposable email address <a href="#dea">DEA</a>?</td>
+<td>Is a disposable email address <a href="#glossary-dea">DEA</a>?</td>
 </tr>
 <tr>
 <td>email</td>
@@ -1120,7 +1120,7 @@ Select the JSON tab to view the schema in JSON.
 <tr>
 <td>Bad</td>
 <td>DomainIsInexistent</td>
-<td>The domain (i.e. the bit after the ‘@’ character) defined in the email address does not exist, according to <a href="#dns">DNS</a> records. A domain that does not exist cannot have email boxes.</td>
+<td>The domain (i.e. the bit after the ‘@’ character) defined in the email address does not exist, according to <a href="#glossary-dns">DNS</a> records. A domain that does not exist cannot have email boxes.</td>
 </tr>
 <tr>
 <td>Bad</td>
@@ -1135,12 +1135,12 @@ Select the JSON tab to view the schema in JSON.
 <tr>
 <td>Bad</td>
 <td>NoMxServersFound</td>
-<td>There are no mail servers defined for this domain, according to <a href="#dns">DNS</a>. Email addresses cannot be valid if there are no email servers defined in DNS for the domain.</td>
+<td>There are no mail servers defined for this domain, according to <a href="#glossary-dns">DNS</a>. Email addresses cannot be valid if there are no email servers defined in DNS for the domain.</td>
 </tr>
 <tr>
 <td>Bad</td>
 <td>ServerDoesNotSupportInternationalMailboxes</td>
-<td>The server does not support international mailboxes. International email boxes are those that use international character sets such as Chinese / Kanji etc. International email boxes require systems in place for <a href="#punycode">Punycode</a> translation. Where these systems are not in place, email verification or delivery is not possible.</td>
+<td>The server does not support international mailboxes. International email boxes are those that use international character sets such as Chinese / Kanji etc. International email boxes require systems in place for <a href="#glossary-punycode">Punycode</a> translation. Where these systems are not in place, email verification or delivery is not possible.</td>
 </tr>
 <tr>
 <td>Bad</td>
@@ -1150,7 +1150,7 @@ Select the JSON tab to view the schema in JSON.
 <tr>
 <td>Bad</td>
 <td>PossibleSpamTrapDetected</td>
-<td>A possible spam trap email address or domain has been detected. Spam traps are email addresses or domains deliberately placed on-line in order to capture and flag potential spam based operations. Our advanced detection heuristics are capable of detecting likely spam trap addresses or domains known to be associated with spam trap techniques. We do not recommend sending emails to addresses identified as associated with known spam trap behaviour. Sending emails to known spam traps or domains will result in your <a href="#esp">ESP</a> being subjected to email blocks from a <a href="#dnsbl">DNS Block List</a>. An ESP cannot tolerate entries in a Block List (as it adversely affects email deliverability for all customers) and will actively refuse to send emails on behalf of customers with a history of generating entries in a Block List.</td>
+<td>A possible spam trap email address or domain has been detected. Spam traps are email addresses or domains deliberately placed on-line in order to capture and flag potential spam based operations. Our advanced detection heuristics are capable of detecting likely spam trap addresses or domains known to be associated with spam trap techniques. We do not recommend sending emails to addresses identified as associated with known spam trap behaviour. Sending emails to known spam traps or domains will result in your <a href="#glossary-esp">ESP</a> being subjected to email blocks from a <a href="#glossary-dnsbl">DNS Block List</a>. An ESP cannot tolerate entries in a Block List (as it adversely affects email deliverability for all customers) and will actively refuse to send emails on behalf of customers with a history of generating entries in a Block List.</td>
 </tr>
 <tr>
 <td>RetryLater</td>
@@ -1165,12 +1165,12 @@ Select the JSON tab to view the schema in JSON.
 <tr>
 <td>Unverifiable</td>
 <td>DomainIsWellKnownDea</td>
-<td>The domain is a well known Disposable Email Address <a href="#dea">DEA</a>. There are many services available that permit users to use a one-time only email address. Typically, these email addresses are used by individuals wishing to gain access to content or services requiring registration of email addresses but same individuals not wishing to divulge their true identities (e.g. permanent email addresses). DEA addresses should not be regarded as valid for email send purposes as it is unlikely that messages sent to DEA addresses will ever be read.</td>
+<td>The domain is a well known Disposable Email Address <a href="#glossary-dea">DEA</a>. There are many services available that permit users to use a one-time only email address. Typically, these email addresses are used by individuals wishing to gain access to content or services requiring registration of email addresses but same individuals not wishing to divulge their true identities (e.g. permanent email addresses). DEA addresses should not be regarded as valid for email send purposes as it is unlikely that messages sent to DEA addresses will ever be read.</td>
 </tr>
 <tr>
 <td>Unverifiable</td>
 <td>GreyListing</td>
-<td><a href="#greylisting">Greylisting</a> is in operation. It is not possible to validate email boxes in real-time where greylisting is in operation.</td>
+<td><a href="#glossary-greylisting">Greylisting</a> is in operation. It is not possible to validate email boxes in real-time where greylisting is in operation.</td>
 </tr>
 <tr>
 <td>Unverifiable</td>
@@ -2479,7 +2479,7 @@ Select the JSON tab to view the schema in JSON.
 <td><a href="#morev3blocklist"><strong>BlockList[]</strong></a></td>
 <td>false</td>
 <td>none</td>
-<td><a href="#block-list">Blocklists</a></td>
+<td><a href="#glossary-block-list">Blocklists</a></td>
 </tr>
 <tr>
 <td><strong>spamTrapAssess</strong></td>
@@ -2793,7 +2793,7 @@ Select the JSON tab to view the schema in JSON.
 <tr>
 <td>Bad</td>
 <td>PossibleSpamTrapDetected</td>
-<td>A possible spam trap email address or domain has been detected. Spam traps are email addresses or domains deliberately placed on-line in order to capture and flag potential spam based operations. Our advanced detection heuristics are capable of detecting likely spam trap addresses or domains known to be associated with spam trap techniques. We do not recommend sending emails to addresses identified as associated with known spam trap behaviour. Sending emails to known spam traps or domains will result in your <a href="#esp">ESP</a> being subjected to email blocks from a <a href="#glossary-dnsbl">DNS Block List</a>. An ESP cannot tolerate entries in a Block List (as it adversely affects email deliverability for all customers) and will actively refuse to send emails on behalf of customers with a history of generating entries in a Block List.</td>
+<td>A possible spam trap email address or domain has been detected. Spam traps are email addresses or domains deliberately placed on-line in order to capture and flag potential spam based operations. Our advanced detection heuristics are capable of detecting likely spam trap addresses or domains known to be associated with spam trap techniques. We do not recommend sending emails to addresses identified as associated with known spam trap behaviour. Sending emails to known spam traps or domains will result in your <a href="#glossary-esp">ESP</a> being subjected to email blocks from a <a href="#glossary-dnsbl">DNS Block List</a>. An ESP cannot tolerate entries in a Block List (as it adversely affects email deliverability for all customers) and will actively refuse to send emails on behalf of customers with a history of generating entries in a Block List.</td>
 </tr>
 <tr>
 <td>RetryLater</td>
