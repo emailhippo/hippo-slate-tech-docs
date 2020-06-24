@@ -217,11 +217,11 @@
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" alt="Navbar" />
+        <img src="images/navbar.png" alt="" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="images/logo.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="json">JSON</a>
               <a href="#" data-language-name="shell">Shell</a>
@@ -341,7 +341,7 @@
                     <a href="#frequently-asked-questions-can-i-trust-you-with-my-data" class="toc-h2 toc-link" data-title="Can I trust you with my data?">Can I trust you with my data?</a>
                   </li>
                   <li>
-                    <a href="#frequently-asked-questions-can-i-get-blacklisted-using-your-apis" class="toc-h2 toc-link" data-title="Can I get blacklisted using your APIs?">Can I get blacklisted using your APIs?</a>
+                    <a href="#frequently-asked-questions-will-i-get-blocklisted-using-your-apis" class="toc-h2 toc-link" data-title="Will I get blocklisted using your APIs?">Will I get blocklisted using your APIs?</a>
                   </li>
                   <li>
                     <a href="#frequently-asked-questions-will-anyone-know-that-i-am-querying-a-domain-or-an-email-address" class="toc-h2 toc-link" data-title="Will anyone know that I am querying a domain or an email address?">Will anyone know that I am querying a domain or an email address?</a>
@@ -687,7 +687,7 @@ Select a language tab to see a code sample.
 </span><span class="n">readLine</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter Email:</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
 
 <span class="c1"># Format the full url and make the http GET request and read the response
-</span><span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">QueryFormatString</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">ApiUrl</span><span class="p">,</span> <span class="n">YourAPIKey</span><span class="p">,</span> <span class="n">readLine</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">QueryFormatString</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">ApiUrl</span><span class="p">,</span> <span class="n">YourAPIKey</span><span class="p">,</span> <span class="n">readLine</span><span class="p">)).</span><span class="n">read</span><span class="p">()</span>
 
 <span class="c1"># Print the response
 </span><span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
@@ -1298,7 +1298,7 @@ Select a language tab to see a code sample.
 </span><span class="n">YourAPIKey</span> <span class="o">=</span> <span class="s">"&lt;!-- ENTER A VALID KEY HERE--&gt;"</span>
 
 <span class="c1"># Format the full url and make the http GET request and read the response
-</span><span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">QueryFormatString</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">ApiUrl</span><span class="p">,</span> <span class="n">YourAPIKey</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">QueryFormatString</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">ApiUrl</span><span class="p">,</span> <span class="n">YourAPIKey</span><span class="p">)).</span><span class="n">read</span><span class="p">()</span>
 
 <span class="c1"># Print the response
 </span><span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
@@ -1682,7 +1682,7 @@ Select a language tab to see a code sample.
 </span><span class="n">readLine</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter Email:</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
 
 <span class="c1"># Format the full url and make the http GET request and read the response
-</span><span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">QueryFormatString</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">ApiUrl</span><span class="p">,</span> <span class="n">YourAPIKey</span><span class="p">,</span> <span class="n">readLine</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">QueryFormatString</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">ApiUrl</span><span class="p">,</span> <span class="n">YourAPIKey</span><span class="p">,</span> <span class="n">readLine</span><span class="p">)).</span><span class="n">read</span><span class="p">()</span>
 
 <span class="c1"># Print the response
 </span><span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
@@ -3300,11 +3300,11 @@ curl <span class="nt">-X</span> GET //api.whoishippo.com/v1/<span class="o">{</s
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'//api.whoishippo.com/v1/{k}/{d}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'//api.whoishippo.com/v1/{k}/{d}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
-<span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
 
 <span class="k">import</span> <span class="p">(</span>
@@ -4390,7 +4390,7 @@ function (user, context, callback) {
 <p>Click <a href="https://register.emailhippo.com/signup">here</a> to sign up and generate a key.</p>
 <h2 id='frequently-asked-questions-can-i-trust-you-with-my-data'>Can I trust you with my data?</h2>
 <p>Great question. Yes, of course - see our <a href="https://www.emailhippo.com/compliance/">Compliance pages</a> for detailed information.</p>
-<h2 id='frequently-asked-questions-can-i-get-blacklisted-using-your-apis'>Can I get blacklisted using your APIs?</h2>
+<h2 id='frequently-asked-questions-will-i-get-blocklisted-using-your-apis'>Will I get blocklisted using your APIs?</h2>
 <p>No. It’s Email Hippo infrastructure that does the work.</p>
 <h2 id='frequently-asked-questions-will-anyone-know-that-i-am-querying-a-domain-or-an-email-address'>Will anyone know that I am querying a domain or an email address?</h2>
 <p>No. It’s Email Hippo infrastructure that does the work.</p>
@@ -4510,7 +4510,7 @@ function (user, context, callback) {
 <h2 id='glossary-dnsbl'>DNSBL</h2>
 <p>DNS Block List</p>
 
-<p>As an anti-spam measure, mail servers can use spam black lists to ‘look up’ the reputation of IP addresses and domains sending email. If an IP or domain is on a block list, the mail server may reject the senders email message.</p>
+<p>As an anti-spam measure, mail servers can use spam block lists to ‘look up’ the reputation of IP addresses and domains sending email. If an IP or domain is on a block list, the mail server may reject the senders email message.</p>
 
 <p>See <a rel="nofollow" target="wikipedia" href="https://en.wikipedia.org/wiki/DNSBL">Wikipedia - DNSBL</a> for further information.</p>
 <h2 id='glossary-esp'>ESP</h2>
