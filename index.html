@@ -2122,10 +2122,12 @@ Select the JSON tab to view the schema in JSON.
 <th>Required</th>
 <th>Restrictions</th>
 <th>Description</th>
+<th>Example use case</th>
 </tr>
 </thead><tbody>
 <tr>
 <td><strong>Version</strong></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2137,6 +2139,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Contains details of the version and edition of API</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;doc</td>
@@ -2144,9 +2147,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Meta</strong></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2158,6 +2163,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Last modified date/time of Email Hippo record</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;expires</td>
@@ -2165,6 +2171,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Date/time that this record expires from Email Hippo cache</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;email</td>
@@ -2172,6 +2179,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>The email being queried</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;tld</td>
@@ -2179,6 +2187,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>The Top Level Domain (TLD) of email being queried</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;domain</td>
@@ -2186,6 +2195,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>The domain of the email being queried</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;subDomain</td>
@@ -2193,6 +2203,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>The sub domain (if any) of the email being queried</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;user</td>
@@ -2200,6 +2211,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>The user element of the email address</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;emailHashMd5</td>
@@ -2207,6 +2219,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>MD5 hash of the email address</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;emailHashSha1</td>
@@ -2214,6 +2227,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>SHA1 hash of the email address</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;emailHashSha256</td>
@@ -2221,9 +2235,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>SHA265 hash of the email address</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Disposition</strong></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2235,6 +2251,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Is a role address? (e.g. info@, sales@, postmaster@)</td>
+<td>Request an additional contact email address</td>
 </tr>
 <tr>
 <td>&emsp;isFreemail</td>
@@ -2242,9 +2259,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Is a free mail provider? (e.g. gmail, hotmail etc)</td>
+<td>Exclude free email addresses in a Business to Business environment</td>
 </tr>
 <tr>
 <td><strong>EmailVerification</strong></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2256,6 +2275,7 @@ Select the JSON tab to view the schema in JSON.
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;&emsp;isSyntaxValid</td>
@@ -2263,6 +2283,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Is the syntax of the email address correct according to RFC standards?</td>
+<td>Prompt your user that the email address has not been entered correctly</td>
 </tr>
 <tr>
 <td>&emsp;&emsp;reason</td>
@@ -2270,9 +2291,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td><a href="#morev3syntaxcodes">Syntax verification reason codes</a></td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;dnsVerification</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2284,6 +2307,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Does the domain have any DNS records?</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;&emsp;isDomainHasMxRecords</td>
@@ -2291,9 +2315,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Does the domain have any MX records?</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;&emsp;recordRoot</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2305,9 +2331,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Details of root A record for domain</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;&emsp;recordWww</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2319,6 +2347,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Details of records for WWW subdomain</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;&emsp;mxRecords</td>
@@ -2326,6 +2355,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>All MX records for domain</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;&emsp;txtRecords</td>
@@ -2333,9 +2363,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>All TXT records for domain</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;mailboxVerification</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2347,6 +2379,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td><a href="#morev3primarycodes">Primary result codes</a></td>
+<td>Act on results</td>
 </tr>
 <tr>
 <td>&emsp;&emsp;reason</td>
@@ -2354,9 +2387,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td><a href="#morev3secondarycodes">Secondary reason codes</a></td>
+<td>Filter on reasons to maintain data quality</td>
 </tr>
 <tr>
 <td><strong>Infrastructure</strong></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2368,6 +2403,7 @@ Select the JSON tab to view the schema in JSON.
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;&emsp;serviceTypeId</td>
@@ -2375,6 +2411,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td><a href="#morev3servicetypes">Service Type Identifier</a> (e.g. Hotmail)</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;&emsp;mailServerLocation</td>
@@ -2382,6 +2419,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Mail server location as a 2 digit ISO code (e.g. US)</td>
+<td>Analyse patterns of email systems</td>
 </tr>
 <tr>
 <td>&emsp;&emsp;smtpBanner</td>
@@ -2389,9 +2427,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>SMTP banner received on connect to mail server</td>
+<td>Detect geographical patterns</td>
 </tr>
 <tr>
 <td>&emsp;web</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2403,9 +2443,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Determines if domain has a web server that responds to PING</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="#morev3sendassessment"><strong>sendAssess</strong></a></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2417,6 +2459,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Inbox quality score</td>
+<td>Create rules based on result</td>
 </tr>
 <tr>
 <td>&emsp;sendRecommendation</td>
@@ -2424,9 +2467,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td><a href="#morev3sendrecommendation">Send recommendation</a></td>
+<td>Create rules based on result e.g. &#39;safe to send&#39;, &#39;block from mailing list&#39;</td>
 </tr>
 <tr>
 <td><strong>spamAssess</strong></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2438,6 +2483,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Is the email domain a <a href="#glossary-dea">DEA</a>?</td>
+<td>Block email or prompt for alternate email address</td>
 </tr>
 <tr>
 <td>&emsp;isDarkWebEmailAddress</td>
@@ -2445,6 +2491,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Is the email address domain hosted in the Dark Web?</td>
+<td>Block email or prompt for alternate email address</td>
 </tr>
 <tr>
 <td>&emsp;isGibberishDomain</td>
@@ -2452,6 +2499,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Is the email address domain deemed to be gibberish text?</td>
+<td>Block email or prompt for alternate email address</td>
 </tr>
 <tr>
 <td>&emsp;isGibberishUser</td>
@@ -2459,6 +2507,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Is the email address user deemed to be gibberish text?</td>
+<td>Block email or prompt for alternate email address</td>
 </tr>
 <tr>
 <td>&emsp;domainRiskScore</td>
@@ -2466,6 +2515,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>General risk score of email address domain</td>
+<td>Create rules based on Trust Score result</td>
 </tr>
 <tr>
 <td>&emsp;formatRiskScore</td>
@@ -2473,6 +2523,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Format risk score of email address</td>
+<td>Create rules based on Trust Score result</td>
 </tr>
 <tr>
 <td>&emsp;profanityRiskScore</td>
@@ -2480,6 +2531,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Profanity risk score of email address</td>
+<td>Create rules based on Trust Score result</td>
 </tr>
 <tr>
 <td>&emsp;overallRiskScore</td>
@@ -2487,6 +2539,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Overall risk score for spam from this email address based on the factors above</td>
+<td>Create rules based on Trust Score result</td>
 </tr>
 <tr>
 <td>&emsp;actionRecomendation</td>
@@ -2494,6 +2547,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>What action should you take if receiving email from email address</td>
+<td>Create rules based on Trust Score result</td>
 </tr>
 <tr>
 <td>&emsp;blockLists</td>
@@ -2501,9 +2555,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td><a href="#glossary-block-list">Blocklists</a></td>
+<td>Create rules based on Trust Score result</td>
 </tr>
 <tr>
 <td><strong>spamTrapAssess</strong></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2515,6 +2571,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Is this email address a known spam trap?</td>
+<td>Block email known to be associated with spam trap activity</td>
 </tr>
 <tr>
 <td>&emsp;spamTrapDescriptor</td>
@@ -2522,9 +2579,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Description of spam trap (e.g. uceprotect)</td>
+<td>Identify type of spam trap associated with email address</td>
 </tr>
 <tr>
 <td><a href="#morev3hippoTrust"><strong>hippoTrust</strong></a></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2536,6 +2595,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>How much can I trust the person associated with this email address?</td>
+<td>Create rules based on Trust Score result</td>
 </tr>
 <tr>
 <td>&emsp;level</td>
@@ -2543,9 +2603,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td><a href="#morev3trustlevel">Trust level</a></td>
+<td>Create rules based on Trust Score result</td>
 </tr>
 <tr>
 <td><strong>social</strong></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2557,6 +2619,7 @@ Select the JSON tab to view the schema in JSON.
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;&emsp;imageUrl</td>
@@ -2564,6 +2627,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Image URL if a gravatar is associated with email address</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;&emsp;profileUrl</td>
@@ -2571,6 +2635,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Profile URL if a gravatar is associated with email address</td>
+<td></td>
 </tr>
 <tr>
 <td>domain</td>
@@ -2578,9 +2643,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>none</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>performance</strong></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2592,6 +2659,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Processing time to check syntax of email address</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;dnsLookup</td>
@@ -2599,6 +2667,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Processing time to gather and check <a href="#glossary-dns">DNS</a> of email address</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;spamAssessment</td>
@@ -2606,6 +2675,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Processing time to assess email address for spam behavior</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;mailboxVerification</td>
@@ -2613,6 +2683,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Processing time to check mail box of email address</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;webInfrastructurePing</td>
@@ -2620,6 +2691,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Processing time to PING web site of email address</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;other</td>
@@ -2627,6 +2699,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Processing time for miscellaneous processing of email address</td>
+<td></td>
 </tr>
 <tr>
 <td>&emsp;overallExecutionTime</td>
@@ -2634,9 +2707,11 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>Total processing time</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>diagnostic</strong></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2648,6 +2723,7 @@ Select the JSON tab to view the schema in JSON.
 <td>false</td>
 <td>none</td>
 <td>none</td>
+<td></td>
 </tr>
 </tbody></table>
 
